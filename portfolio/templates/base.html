@@ -13,30 +13,31 @@
     {% block head %}
     {% endblock %}
 </head>
-<body>
+<body class="h-auto">
     <nav class="bg-dark h-[60px]">
       <!-- Navbar content -->
       <div
-      class="navbar pt-3 px-md-5 px-0 mx-auto"
-      style="max-width: 1200px;"
+      class="flex md:justify-between justify-around pt-3 px-md-5 px-0 mx-auto "
+      style="max-width: 1200px;
+      visibility: visible !important;"
       >
         <a 
-        href="#Portfolio"
-        class="font-weight-bold text-light text-lg appearance-none cursor-pointer"
+        href="#contact"
+        class="font-weight-bold text-light text-md md:text-lg lg:text-2xl appearance-none cursor-pointer"
         style="cursor: pointer;"
         >
-          Portfolio
+          Contact Me
         </a>
         <a 
         href="#About Me"
-        class="font-weight-bold text-light text-lg appearance-none cursor-pointer"
+        class="font-weight-bold text-light text-md md:text-lg lg:text-2xl appearance-none cursor-pointer"
         style="cursor: pointer;"
         >
           About Me
         </a>
         <a 
         href="#Technologies"
-        class="font-weight-bold text-light text-lg appearance-none cursor-pointer"
+        class="font-weight-bold text-light text-md md:text-lg lg:text-2xl appearance-none cursor-pointer"
         style="cursor: pointer;"
         >
           Technologies
@@ -48,9 +49,7 @@
     id="main header container"
     class="mx-auto"
     style="
-    max-width: 1200px; 
-    
-    height: 550px;
+    max-width: 1200px;
     "
     >
       {% block content %}

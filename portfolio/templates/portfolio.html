@@ -41,19 +41,25 @@
                 <div class="flex gap-4 mt-4 md:mt-[32px] ">
                     {% for social in socials %}
                         <a 
-                        title="{{ social.name }}"
+                        class="relative iniline-block cursor-pointer group"
                         href="{{ social.urlTo }}">
                             <img
-                            class="w-[30px] h-auto"
+                            class="w-[30px] h-auto group-hover:scale-110 transition-transform"
                             src="{% static social.link %}"
                             />
+                            <span
+                            class="invisible! w-[120px] bg-slate-400 text-black font-medium text-center rounded-[5px] py-[5px] absolute z-10 bottom-[-125%] left-[80%] ml-[-60px] opacity-0 group-hover:opacity-100 group-hover:visible! transition-opacity
+                            "
+                            >
+                                {{ social.name }}
+                            </span>
                         </a>
                     {% endfor %}
                 </div>
             </div>
             <div>
                 <img 
-                class="rounded-circle"
+                class="rounded-circle min-w-[180px]"
                 style="width: 300px;"
                 src="https://avatars.githubusercontent.com/u/97150877?v=4" />
             </div>
@@ -110,6 +116,27 @@
                     </h2>
                 </a>
             {% endfor %}
-        <div>
+        </div>
+    </div>
+    <div 
+    style="padding: 50px;"
+    id="contact">
+        <div class="max-w-[900px] w-full ">
+            <h2 class="font-bold text-4xl mb-2">
+                Contact Me
+            </h2>
+            <p class="text-lg text-[#6c757d] font-semibold my-2">
+                Feel free to contact me if you have any questions or if you want to work together as a practice.
+            </p>
+            <textarea 
+            class="p-2 font-semibold text-lg w-full max-w-[900px] h-[200px] resize-none border-[4px] rounded-md"
+            placeholder="Message"
+            ></textarea>
+            <button
+            class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-md mt-2 font-bold max-w-[200px] w-full shadow-md"
+            >
+                Send
+            </button>
+        </div>
     </div>
 {% endblock %}  
