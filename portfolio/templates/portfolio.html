@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head %}
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div
+    style="padding: 50px;"
+    >
+        <div 
+        id="Portfolio"
+        class="d-flex flex-md-row flex-column flex-column-reverse gap-3 justify-content-between align-items-center my-auto"
+        >
+            <div class="mt-md-0 mt-3 flex flex-col justify-between">
+                <div>
+                    <h1
+                    class="font-weight-bold mb-1 bg-gradient-to-r from-blue-500 to-slate-500 text-transparent bg-clip-text"
+                    style="font-size: clamp(30px, 5vw + 20px, 65px);"
+                    >
+                        Renato Santos Jr
+                    </h1>
+                    <p
+                    class="text-muted "
+                    style="font-weight: 600; font-size: clamp(15px, 2vw + 10px, 20px); max-width: 700px;"
+                    >
+                        A 19 years old aspiring programmer from the province of Bulacan. 
+                        Wanting to be a software developer i enrolled in the BSIT program at the STI College of Sta Maria Bulacan
+                    </p>
+                </div>
+                <div class="flex gap-4 mt-4 md:mt-[32px] ">
+                    {% for social in socials %}
+                        <a 
+                        title="{{ social.name }}"
+                        href="{{ social.urlTo }}">
+                            <img
+                            class="w-[30px] h-auto"
+                            src="{% static social.link %}"
+                            />
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div>
+                <img 
+                class="rounded-circle"
+                style="width: 300px;"
+                src="https://avatars.githubusercontent.com/u/97150877?v=4" />
+            </div>
+        </div>
+    </div>
+    <div
+    id="About Me"
+    style="padding: 50px;"
+    >
+        <h2 class="font-bold text-4xl mb-2">
+            About Me
+        </h2>
+        <div class=" flex flex-col flex-col-reverse gap-3 md:flex-row justify-between items-center">
+            <div>
+               <p class="max-w-[500px] font-semibold text-lg md:text-xl text-[#6c757d]">
+                I’m a full-stack developer passionate about crafting dynamic and engaging web applications.
+                My expertise spans both frontend and backend development, enabling me to bring ideas to life from concept to deployment. 
+                I have a strong focus on NestJS, Express for backend development and enjoy working with React, Node.js, and PostgreSQL on the frontend.
+               </br> </br>
+                While I struggle with consistency, which can lead to unfinished projects, I strive to overcome this by pushing myself to implement what I've learned. 
+                I believe that practical application is key to solidifying my skills and staying motivated. I’m committed to continuous improvement and eager to create impactful applications.
+               </p>
+            </div>
+            <div class="mb-2 md:mt-2 flex flex-col justify-center">
+                <img 
+                class="w-full max-w-[550px] h-auto rounded-lg"
+                src="{%  static 'photo/AboutMe_Photo.png' %}" />
+            </div>
+        </div>
+    </div>
+    <div
+    id="Technologies"
+    style="padding: 50px;"
+    >
+        <h2 class="font-bold text-4xl mb-2">
+            Technologies 
+        </h2>
+        <p class="text-lg text-[#6c757d] font-semibold my-2">
+            I've learned and worked with a variety of technologies in the past and implemented it in my projects. here are the some that 
+            I am familiar with.
+        </p>
+        <div class="mt-3 flex flex-wrap items-center justify-center gap-2 md: gap-7">
+            {% for tech in technologies %}
+                <a href="{{ tech.urlTo }}"
+                class="max-w-[150px] h-auto w-full flex flex-col items-center gap-1 cursor-pointer">
+                    <div class="max-w-[150px] w-full h-auto border-[3px] border-[#6c757d] rounded-lg p-1">
+                        <img 
+                        class="max-w-[135px] w-full h-auto"
+                        src="{% static tech.link %}" 
+                        />
+                    </div>
+                    <h2 class="font-bold text-lg ">
+                        {{ tech.name }}
+                    </h2>
+                </a>
+            {% endfor %}
+        <div>
+    </div>
+{% endblock %}  
