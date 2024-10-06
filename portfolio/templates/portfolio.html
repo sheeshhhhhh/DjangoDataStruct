@@ -12,6 +12,7 @@
             text-decoration: none;
         }
     </style>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 {% endblock %}
 
 {% block content %}
@@ -25,13 +26,13 @@
             <div class="mt-md-0 mt-3 flex flex-col justify-between">
                 <div>
                     <h1
-                    class="font-weight-bold mb-1 bg-gradient-to-r from-blue-500 to-slate-500 text-transparent bg-clip-text"
+                    class="font-weight-bold mb-1 bg-gradient-to-r from-blue-500 to-slate-600 text-transparent bg-clip-text"
                     style="font-size: clamp(30px, 5vw + 20px, 65px);"
                     >
                         Renato Santos Jr
                     </h1>
                     <p
-                    class="text-muted "
+                    class=""
                     style="font-weight: 600; font-size: clamp(15px, 2vw + 10px, 20px); max-width: 700px;"
                     >
                         A 19 years old aspiring programmer from the province of Bulacan. 
@@ -128,15 +129,33 @@
             <p class="text-lg text-[#6c757d] font-semibold my-2">
                 Feel free to contact me if you have any questions or if you want to work together as a practice.
             </p>
-            <textarea 
-            class="p-2 font-semibold text-lg w-full max-w-[900px] h-[200px] resize-none border-[4px] rounded-md"
-            placeholder="Message"
-            ></textarea>
+            <div class="flex flex-col gap-2">
+                    <input 
+                    class="p-2 font-semibold text-lg resize-none border-[2px] rounded-md outline-none max-w-[300px] w-full"
+                    id="name" placeholder="name (optional)">
+                    <input 
+                    class="p-2 font-semibold text-lg resize-none border-[2px] rounded-md outline-none max-w-[420px] w-full"
+                     id="Contact" placeholder="contact info (optional)"
+                    >
+                    <textarea 
+                    id="message"
+                    class="p-2 font-semibold text-lg w-full max-w-[900px] h-[200px] resize-none border-[2px] rounded-md outline-none"
+                    placeholder="Message"
+                    ></textarea>
+                    <p 
+                    id="messageError"
+                    class="text-red-400 font-bold">
+                    <!-- this is for error message -->    
+                    </p>
+            </div>
             <button
+            onclick="sendMessage()"
             class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-md mt-2 font-bold max-w-[200px] w-full shadow-md"
             >
                 Send
             </button>
         </div>
     </div>
+    <script src="{% static 'js/Portfolio.js' %}" ></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 {% endblock %}  

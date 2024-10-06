@@ -18,5 +18,6 @@ from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include('api.urls')), # this is the api not a page
     path('portfolio/', include('portfolio.urls'))
 ]
